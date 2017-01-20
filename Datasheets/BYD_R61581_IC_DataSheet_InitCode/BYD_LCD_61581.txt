@@ -1,0 +1,156 @@
+void LCD_Init_R61581_Reg_Byd(void)
+{
+	LCD_CtrlWrite(0xFF);
+	LCD_CtrlWrite(0xFF);
+	Delayms(1);
+	LCD_CtrlWrite(0xFF);
+	LCD_CtrlWrite(0xFF);
+	LCD_CtrlWrite(0xFF);
+	LCD_CtrlWrite(0xFF);
+	Delayms(10);
+	LCD_CtrlWrite(0xB0);
+	LCD_DataWrite(0x00);
+
+	
+	LCD_CtrlWrite(0xB3);
+	LCD_DataWrite(0x02);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+
+	LCD_CtrlWrite(0xB4);
+	LCD_DataWrite(0x00);
+
+	LCD_CtrlWrite(0xC0);
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x3B);//480
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x01);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x43);
+
+	LCD_CtrlWrite(0xC1);
+	LCD_DataWrite(0x08);
+	LCD_DataWrite(0x10);//CLOCK
+	LCD_DataWrite(0x08);
+	LCD_DataWrite(0x08);
+
+	LCD_CtrlWrite(0xC4);
+	LCD_DataWrite(0x11);
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x01);
+
+	LCD_CtrlWrite(0xC8);//GAMMA
+
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x05);//(0x05);
+	LCD_DataWrite(0x04);
+	LCD_DataWrite(0x77);//(0x48)
+	LCD_DataWrite(0x02);
+	LCD_DataWrite(0x09);//0x08
+	LCD_DataWrite(0x12);
+	LCD_DataWrite(0x17);
+
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x33);
+
+	LCD_DataWrite(0x17);
+	LCD_DataWrite(0x12);
+	LCD_DataWrite(0x09);//0x08
+	LCD_DataWrite(0x72);//43/55 //0x42
+	LCD_DataWrite(0x07);//0x08
+	LCD_DataWrite(0x04);
+	LCD_DataWrite(0x05);//0x05
+	LCD_DataWrite(0x03);
+
+	LCD_DataWrite(0x33);
+	LCD_DataWrite(0x30);
+
+	LCD_CtrlWrite(0x2A);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x01);
+	LCD_DataWrite(0x3F);//320
+
+	LCD_CtrlWrite(0x2B);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x01);
+	LCD_DataWrite(0xDF);//480
+
+	LCD_CtrlWrite(0x35);
+	LCD_DataWrite(0x00);
+
+	LCD_CtrlWrite(0x3A);
+	LCD_DataWrite(0x06);
+
+	LCD_CtrlWrite(0x44);
+	LCD_DataWrite(0x00);
+	LCD_DataWrite(0x45);
+
+	LCD_CtrlWrite(0x2C);
+	LCD_CtrlWrite(0x11);
+
+	Delayms(150);
+
+	LCD_CtrlWrite(0xD0);
+	LCD_DataWrite(0x07);
+	LCD_DataWrite(0x07);
+	LCD_DataWrite(0x1F);
+	LCD_DataWrite(0x05);
+
+	LCD_CtrlWrite(0xD1);
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x1F);//(0x38);//VCM //0x2F
+	LCD_DataWrite(0x10);//(0x15);//VDV //0x10
+
+	LCD_CtrlWrite(0xD2);
+	LCD_DataWrite(0x03);
+	LCD_DataWrite(0x24);
+	LCD_DataWrite(0x04);
+
+	LCD_CtrlWrite(0x29);
+
+	Delayms(10);
+}
+void LCD_EnterSleep_R61581_Byd(void)
+{
+	#if defined(LQT_SUPPORT)/*Do not remove LQT code segment*/
+	if(!(lcd_at_mode==LCD_AT_RELEASE_MODE))
+ 	{
+  		return;
+	}	
+	#endif /*defined(LQT_SUPPORT))*/	
+	LCD_CtrlWrite(0x0028); 
+	LCD_CtrlWrite(0x0010); 
+	Delayms(150);
+	LCD_CtrlWrite(0x00B0);
+	LCD_DataWrite(0x0000);
+	LCD_CtrlWrite(0x00B1);
+	LCD_DataWrite(0x0001);
+}
+void LCD_ExitSleep_R61581_Byd(void)
+{
+	#if defined(LQT_SUPPORT)/*Do not remove LQT code segment*/
+	if(!(lcd_at_mode==LCD_AT_RELEASE_MODE))
+	{
+		return;
+	}	
+	#endif /*defined(LQT_SUPPORT))*/
+
+	LCD_CtrlWrite(0x00FF); 
+	LCD_CtrlWrite(0x00FF); 		
+	LCD_CtrlWrite(0x00FF); 
+	LCD_CtrlWrite(0x00FF); 
+	LCD_CtrlWrite(0x00FF); 
+	LCD_CtrlWrite(0x00FF); 
+	Delayms(15);
+	LCD_CtrlWrite(0x00B0);
+	LCD_DataWrite(0x0000);
+	LCD_CtrlWrite(0x00B1);
+	LCD_DataWrite(0x0000);	
+	LCD_Init_R61581_Reg_Byd();
+}

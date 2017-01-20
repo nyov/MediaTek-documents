@@ -1,0 +1,167 @@
+Set_NOKIA_8B_CMD(0xB9); // Set EXTC
+
+Set_NOKIA_8B_PA(0xFF);
+
+Set_NOKIA_8B_PA(0x83);
+
+Set_NOKIA_8B_PA(0x57);
+
+DelayX1ms(5);
+
+Set_NOKIA_8B_CMD(0xB6); //
+
+Set_NOKIA_8B_PA(0x57); //VCOMDC
+
+Set_NOKIA_8B_CMD(0x11);
+
+DelayX1ms(150);
+
+Set_NOKIA_8B_CMD(0x3A);
+
+Set_NOKIA_8B_PA(0x06); //262k
+
+ 
+
+Set_NOKIA_8B_CMD(0xB0);
+
+Set_NOKIA_8B_PA(0x07); //262k
+
+ 
+
+Set_NOKIA_8B_CMD(0xCC); //Set Panel
+
+Set_NOKIA_8B_PA(0x01); //
+
+ 
+
+Set_NOKIA_8B_CMD(0xB1); //
+
+Set_NOKIA_8B_PA(0x00); //DP
+
+Set_NOKIA_8B_PA(0x16); //BT
+
+Set_NOKIA_8B_PA(0x1C); //VSPR
+
+Set_NOKIA_8B_PA(0x1C); //VSNR
+
+Set_NOKIA_8B_PA(0x83); //AP
+
+Set_NOKIA_8B_PA(0x48); //FS
+
+Set_NOKIA_8B_CMD(0xC0); //
+
+Set_NOKIA_8B_PA(0x24); //OPON
+
+Set_NOKIA_8B_PA(0x24); //OPON
+
+Set_NOKIA_8B_PA(0x01); //STBA
+
+Set_NOKIA_8B_PA(0x3C); //STBA
+
+Set_NOKIA_8B_PA(0x1E); //STBA
+
+Set_NOKIA_8B_PA(0x08); //GEN
+
+ 
+
+Set_NOKIA_8B_CMD(0xB4); //
+
+Set_NOKIA_8B_PA(0x11); //NW
+
+Set_NOKIA_8B_PA(0x40); //RTN
+
+Set_NOKIA_8B_PA(0x00); //DIV
+
+Set_NOKIA_8B_PA(0x2A); //DUM
+
+Set_NOKIA_8B_PA(0x2A); //DUM
+
+Set_NOKIA_8B_PA(0x0D); //GDON
+
+Set_NOKIA_8B_PA(0x9c); //GDOFF 4f
+
+ 
+
+Set_NOKIA_8B_CMD(0xE0);
+
+Set_NOKIA_8B_PA(0x02);//1
+
+Set_NOKIA_8B_PA(0x0A);//2
+
+Set_NOKIA_8B_PA(0x12);//3
+
+Set_NOKIA_8B_PA(0x1f);//4
+
+Set_NOKIA_8B_PA(0x2e);//5
+
+Set_NOKIA_8B_PA(0x53);//6
+
+Set_NOKIA_8B_PA(0x5c);//7
+
+Set_NOKIA_8B_PA(0x64);//8
+
+Set_NOKIA_8B_PA(0x32);//9
+
+Set_NOKIA_8B_PA(0x2e);//10
+
+Set_NOKIA_8B_PA(0x2b);//11
+
+Set_NOKIA_8B_PA(0x21);//12
+
+Set_NOKIA_8B_PA(0x22);//13
+
+Set_NOKIA_8B_PA(0x16);//14
+
+Set_NOKIA_8B_PA(0x23);//15
+
+Set_NOKIA_8B_PA(0x0f);//16
+
+ 
+
+Set_NOKIA_8B_PA(0x02);//1
+
+Set_NOKIA_8B_PA(0x0A);//2
+
+Set_NOKIA_8B_PA(0x12);//3
+
+Set_NOKIA_8B_PA(0x1f);//4
+
+Set_NOKIA_8B_PA(0x2e);//5
+
+Set_NOKIA_8B_PA(0x53);//6
+
+Set_NOKIA_8B_PA(0x5c);//7
+
+Set_NOKIA_8B_PA(0x64);//8
+
+Set_NOKIA_8B_PA(0x32);//9
+
+Set_NOKIA_8B_PA(0x2e);//10
+
+Set_NOKIA_8B_PA(0x2b);//11
+
+Set_NOKIA_8B_PA(0x21);//12
+
+Set_NOKIA_8B_PA(0x22);//13
+
+Set_NOKIA_8B_PA(0x16);//14
+
+Set_NOKIA_8B_PA(0x23);//15
+
+Set_NOKIA_8B_PA(0x0f);//16
+
+ 
+
+Set_NOKIA_8B_PA(0x00);
+
+Set_NOKIA_8B_PA(0x00);
+
+ 
+
+Set_NOKIA_8B_CMD(0x29); //Display on
+
+DelayX1ms(25);
+
+ 
+
+ Set_NOKIA_8B_CMD(0x2C);   
